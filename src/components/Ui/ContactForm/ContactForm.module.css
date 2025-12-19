@@ -1,0 +1,58 @@
+/* src/components/ui/ContactForm.module.css */
+
+.formContainer {
+  /* Margen o padding si se usa dentro de una cuadrícula */
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Espacio entre los elementos del formulario */
+}
+
+/* Estilos de los inputs (Nombre, Email) y Textarea */
+.input, .textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit; /* Usa la fuente global del proyecto */
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.input:focus, .textarea:focus {
+  border-color: #f08080;
+  background-color: #000;
+  outline: none;
+}
+
+.input, .textarea {
+  border-color: #000;
+  background-color: #F08080;
+}
+
+.textarea {
+  resize: vertical; /* Permite redimensionar solo verticalmente */
+}
+
+/* Estilos para los mensajes de estado */
+.successMessage {
+  color: #157347; /* Color verde */
+  background-color: #f08080;
+  border: 1px solid #badbcc;
+  padding: 0.75rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.errorMessage {
+  color: #a71d2a; /* Color rojo */
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 0.75rem;
+  border-radius: 4px;
+  text-align: center;
+}

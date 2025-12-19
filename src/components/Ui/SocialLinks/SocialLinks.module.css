@@ -1,0 +1,41 @@
+/* src/components/ui/SocialLinks.module.css */
+
+.socialLinks {
+  display: flex;
+  gap: 1rem; /* Espacio entre los íconos */
+  justify-content: center; /* Centrar por defecto */
+}
+
+.socialLinks a {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del texto del componente padre */
+  transition: transform 0.3s, color 0.3s;
+}
+
+.icon {
+  font-size: 1.5rem; /* Tamaño del ícono */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* Opcional: para un efecto más circular */
+}
+
+/* Efecto al pasar el ratón (Hover) */
+.socialLinks a:hover {
+  color: #e0ac69; /* Color de acento café claro */
+  transform: translateY(-2px); /* Pequeño levantamiento */
+}
+
+/* -------------------------------------- */
+/* NOTA: Uso en ContactForm (Ejemplo de personalización) */
+/* -------------------------------------- */
+
+/* Si necesitas que el color de los íconos sea blanco en la ContactSection oscura: */
+.socialLinks a {
+    color: #f7f3ed; /* Color base claro */
+}
+
+/* Y si el padre lo requiere, puedes añadir un estilo condicional: */
+/* .socialLinks.footerStyle a { color: #f7f3ed; } */

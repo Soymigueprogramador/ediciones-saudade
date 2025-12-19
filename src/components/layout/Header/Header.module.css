@@ -1,0 +1,154 @@
+/* src/components/layout/Header.module.css */
+
+/* -------------------------------------- */
+/* ESTILOS BASE (MÓVIL PRIMERO) */
+/* -------------------------------------- */
+
+.header {
+  background-color: #f08080;
+  color: #000;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Posicionamiento: opcionalmente 'fixed' si quieres que siempre esté visible */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Estilos del Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.logo span {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+/* Estilos de la Navegación (Menú) */
+.nav {
+  /* Por defecto oculto en móvil */
+  display: none;
+  flex-grow: 1; /* Permite que tome el espacio disponible */
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Para alinear los enlaces en desktop */
+  justify-content: center;
+}
+
+.nav li {
+  margin: 0 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #7b5b47; /* Un tono más cálido al pasar el ratón */
+}
+
+/* Acciones (Búsqueda y Toggle) */
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 1rem; /* Espacio entre el menú y el ícono de búsqueda */
+}
+
+/* Botón del Menú de Hamburguesa (visible solo en móvil) */
+.menuToggle {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  /* Oculto en desktop, se muestra en móvil (ver media query) */
+  display: block;
+  background-color: #f08080;
+  color: #000;
+}
+
+
+/* -------------------------------------- */
+/* ESTILOS MÓVILES (CUANDO EL MENÚ ESTÁ ABIERTO) */
+/* -------------------------------------- */
+
+.nav.open {
+  /* Muestra el menú en modo columna cuando se activa en móvil */
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%; /* Justo debajo del header */
+  left: 0;
+  width: 100%;
+  background-color: #f7f3ed;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.nav.open ul {
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav.open li {
+    margin: 0.5rem 0;
+}
+
+
+/* -------------------------------------- */
+/* RESPONSIVIDAD (Media Query para DESKTOP/TABLET GRANDE) */
+/* -------------------------------------- */
+
+@media (min-width: 768px) {
+  .header {
+    padding: 1rem 3rem; /* Más padding horizontal en pantallas grandes */
+  }
+
+  /* Mostrar la navegación horizontalmente en desktop */
+  .nav {
+    display: block;
+  }
+
+  /* Ocultar el botón de hamburguesa en desktop */
+  .menuToggle {
+    display: none;
+  }
+
+  /* Ajustar la disposición de los elementos */
+  .header {
+    /* Distribuye el logo, navegación y acciones */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+  }
+
+  /* Centrar la navegación en el medio */
+  .nav {
+      grid-column: 2 / 3;
+  }
+
+  /* Mover el ícono de búsqueda a la derecha */
+  .actions {
+      justify-content: flex-end;
+  }
+}

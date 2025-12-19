@@ -1,0 +1,95 @@
+/* src/components/ui/MenuItemCard.module.css */
+
+.card {
+  background-color: #f08080;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%; /* El ancho lo maneja el grid del contenedor */
+
+  transition: all 0.25s ease;
+}
+
+/* ----------------------------- */
+/* TARJETA SELECCIONADA */
+/* ----------------------------- */
+
+.selected {
+  border: 2px solid #c59d5f;
+  box-shadow: 0 0 15px rgba(197, 157, 95, 0.6);
+  transform: scale(1.02);
+}
+
+/* ----------------------------- */
+/* IMAGEN CIRCULAR */
+/* ----------------------------- */
+
+.imageContainer {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 4px solid #f7f3ed;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-color: #000;
+}
+
+/* ----------------------------- */
+/* TEXTO Y DETALLES */
+/* ----------------------------- */
+
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.description {
+  font-size: 0.85rem;
+  color: #000;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: bold;
+  color: #000;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* ----------------------------- */
+/* RESPONSIVE */
+/* ----------------------------- */
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .imageContainer {
+    width: 120px;
+    height: 120px;
+  }
+}

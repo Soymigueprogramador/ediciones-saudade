@@ -1,0 +1,40 @@
+/* src/components/ui/Button.module.css */
+
+.button {
+  /* Diseño base */
+  background-color: #f08080; /* Color crema/claro */
+  color: #000; /* Texto color café oscuro */
+  border: 2px solid #38221c; /* Borde oscuro */
+  border-radius: 25px; /* Esquinas redondeadas (Pill shape) */
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 15px;
+
+  /* Transiciones suaves */
+  transition: all 0.3s ease;
+
+  /* Asegura que el texto no se seleccione fácilmente */
+  user-select: none;
+}
+
+/* Efecto al pasar el ratón (Hover) */
+.button:hover {
+  background-color: #000; /* Invierte los colores */
+  color: #f08088 ; /* Texto claro */
+  border-color: #000;
+}
+
+/* Estado al presionar el botón */
+.button:active {
+  transform: scale(0.98); /* Pequeño efecto de "presión" */
+}
+
+/* Estado deshabilitado (para formularios, etc.) */
+.button:disabled {
+  background-color: #ccc;
+  color: #666;
+  border-color: #666;
+  cursor: not-allowed;
+}

@@ -1,0 +1,85 @@
+/* src/components/sections/LocationSection.module.css */
+
+.locationSection {
+    /* Color de fondo que contrasta ligeramente con el café oscuro (Footer) */
+    background-color: #f7f3ed; /* Color crema / claro */
+    padding: 4rem 2rem;
+    color: #38221c; /* Texto color café oscuro */
+    margin-bottom: 15px;
+}
+
+.contentWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.locationGrid {
+    display: grid;
+    gap: 3rem;
+    /* Móvil: Una sola columna */
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+/* -------------------------------------- */
+/* MAPA (Visual) */
+/* -------------------------------------- */
+
+.mapContainer {
+    /* Estilos para el contenedor del mapa */
+    max-width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mapImage {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* -------------------------------------- */
+/* DETALLES Y HORARIOS */
+/* -------------------------------------- */
+
+.details {
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.address {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.hours {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: #7b5b47;
+}
+
+/* -------------------------------------- */
+/* RESPONSIVIDAD: Dos Columnas en Desktop */
+/* -------------------------------------- */
+@media (min-width: 768px) {
+    .locationGrid {
+        /* Divide la sección en dos columnas */
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+    }
+
+    .details {
+        text-align: left;
+    }
+}

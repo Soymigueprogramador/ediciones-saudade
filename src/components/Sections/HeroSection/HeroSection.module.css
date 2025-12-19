@@ -1,0 +1,62 @@
+/* src/components/sections/HeroSection.module.css */
+
+.hero {
+    /* 1. Imagen de Fondo */
+    height: 80vh; /* Alto visible: 80% de la altura de la ventana */
+    min-height: 500px;
+    background-image: url('/src/assets/portada/portada.jpeg'); /* ⬅️ ¡Asegúrate de tener esta imagen! */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center; /* Centrar verticalmente el contenido */
+    justify-content: center; /* Centrar horizontalmente el contenido */
+}
+
+/* 2. Superposición Oscura (Overlay) */
+.overlay {
+    /* Crea la capa oscura para que el texto resalte */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Degradado oscuro en la parte inferior para que el texto blanco se lea mejor */
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+
+    display: flex;
+    align-items: flex-end; /* Alinea el contenido a la parte inferior de la imagen */
+    justify-content: center;
+}
+
+/* 3. Contenido de Texto */
+.content {
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+    padding-bottom: 5rem; /* Margen inferior para separarlo de la parte inferior */
+    max-width: 80%;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 5px; /* Para darle un toque elegante */
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+/* Responsividad para Móvil */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+    .subtitle {
+        font-size: 1.2rem;
+    }
+}

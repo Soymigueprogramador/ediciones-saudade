@@ -1,0 +1,28 @@
+/* src/components/Sections/MenuSection.module.css */
+
+.menuGrid {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* 📱 MÓVIL — 1 card */
+@media (max-width: 600px) {
+  .menuGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 📟 TABLET — 2 cards */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .menuGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 🖥️ PC — 4 cards */
+@media (min-width: 1024px) {
+  .menuGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
