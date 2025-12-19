@@ -17,20 +17,4 @@ export const Productos = [
     image: "/src/assets/ediciones/edicion-2.jpeg",
     category: "Pastelería"
   },
-  {
-    id: 3,
-    name: "Parfait de Granola",
-    description: "Yogur griego, miel, granola casera y bayas frescas.",
-    price: 5.90,
-    image: "/assets/image/parfait.jpg",
-    category: "Desayunos"
-  },
-  {
-    id: 4,
-    name: "Latte de Vainilla",
-    description: "Espresso con leche vaporizada y vainilla.",
-    price: 4.20,
-    image: "/assets/image/latte-vainilla.jpg",
-    category: "Bebidas Calientes"
-  }
 ];
