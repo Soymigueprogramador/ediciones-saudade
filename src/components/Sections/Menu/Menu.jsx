@@ -1,4 +1,4 @@
-import { Productos } from "../../../data/menuItems";
+import { Productos } from "../../../data/menuItems.js";
 import MenuItemCard from "../../Ui/MenuItemCard/MenuItemCard.jsx";
 import Button from "../../Ui/Button/Button.jsx";
 import style from "./Menu.module.css";
