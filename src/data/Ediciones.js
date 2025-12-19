@@ -6,7 +6,7 @@ export const Ediciones = [
     name: "edicion 1",
     description: "Doble shot de espresso con leche microespumada, suave y balanceado.",
     price: 3.50,
-    image: "/src/assets/ediciones/edicion-1.jpeg",
+    image: "/public/assets/ediciones/edicion-1.jpeg",
     category: "Bebidas Calientes"
   },
   {
@@ -14,7 +14,7 @@ export const Ediciones = [
     name: "edicion 2",
     description: "Masa hojaldrada, suave y mantecosa, recién horneado.",
     price: 2.75,
-    image: "/src/assets/ediciones/edicion-2.jpeg",
+    image: "/public/assets/ediciones/edicion-2.jpeg",
     category: "Pastelería"
   },
 ];
