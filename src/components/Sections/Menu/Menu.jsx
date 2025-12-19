@@ -1,4 +1,4 @@
-import { Ediciones } from "../../../data/menuItems.js";
+import { Ediciones } from "../../../data/Ediciones.js";
 import MenuItemCard from "../../Ui/MenuItemCard/MenuItemCard.jsx";
 import Button from "../../Ui/Button/Button.jsx";
 import style from "./Menu.module.css";
