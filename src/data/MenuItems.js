@@ -1,6 +1,6 @@
 // Conjunto de objetos que mostrará los productos
 
-export const Productos = [
+export const Ediciones = [
   {
     id: 1,
     name: "edicion 1",
