@@ -4,7 +4,7 @@
     /* 1. Imagen de Fondo */
     height: 80vh; /* Alto visible: 80% de la altura de la ventana */
     min-height: 500px;
-    background-image: url('/src/assets/portada/portada.jpeg'); /* ⬅️ ¡Asegúrate de tener esta imagen! */
+    background-image: url('/assets/portada/portada.jpeg'); /* ⬅️ ¡Asegúrate de tener esta imagen! */
     background-size: cover;
     background-position: center;
     position: relative;
