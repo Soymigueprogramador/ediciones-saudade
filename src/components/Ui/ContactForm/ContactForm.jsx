@@ -28,7 +28,7 @@ function ContactForm({ selectedProduct }) {
       return;
     }
 
-    const phoneNumber = "+5491126644514";
+    const phoneNumber = "+5491144480181";
 
     const message = `
 Hola, quiero hacer una consulta desde la web.
