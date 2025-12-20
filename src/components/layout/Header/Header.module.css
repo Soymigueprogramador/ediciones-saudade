@@ -58,7 +58,7 @@
 }
 
 .nav a:hover {
-  color: #7b5b47; /* Un tono más cálido al pasar el ratón */
+  color: #000; /* Un tono más cálido al pasar el ratón */
 }
 
 /* Acciones (Búsqueda y Toggle) */
