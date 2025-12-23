@@ -1,7 +1,7 @@
-// src/components/ui/ContactForm.jsx
 import React, { useState } from "react";
+import Swal from "sweetalert2"; // 1. Importamos SweetAlert2
 import styles from "./ContactForm.module.css";
-import Button from "../Button/Button.jsx"; // Importamos el componente Button que ya creamos
+import Button from "../Button/Button.jsx";
 
 function ContactForm({ selectedProduct }) {
   const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ function ContactForm({ selectedProduct }) {
     message: "",
   });
 
-  const [status, setStatus] = useState(""); // 'idle', 'sending', 'success', 'error'
+  const [status, setStatus] = useState("idle");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,43 +23,54 @@ function ContactForm({ selectedProduct }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // 2. Alerta de validación en lugar del alert nativo
     if (!formData.name || !formData.number || !formData.message) {
-      alert("Por favor, rellena todos los campos.");
+      Swal.fire({
+        title: "Campos incompletos",
+        text: "Por favor, rellena todos los campos antes de enviar.",
+        icon: "warning",
+        confirmButtonColor: "#8b5e3c", // Color acorde a Ediciones Saudade
+      });
       return;
     }
 
     const phoneNumber = "+5491144480181";
-
+    //const phoneNumber = "+5491126644514"; Lo dejo asi para las priebas en local
     const message = `
 Hola, quiero hacer una consulta desde la web.
-
 👤 Nombre: ${formData.name}
 📞 Teléfono: ${formData.number}
-
-📦 Producto consultado:
-${
-  selectedProduct
-    ? `- ${selectedProduct.name}
-- ${selectedProduct.description}
-- Precio: $${selectedProduct.price}`
-    : "No se seleccionó ningún producto"
-}
-
-📝 Mensaje:
-${formData.message}
-`;
+📦 Producto: ${selectedProduct ? selectedProduct.name : "Consulta general"}
+📝 Mensaje: ${formData.message}`;
 
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
 
-    window.open(whatsappURL, "_blank");
+    // 3. Ejecutar el envío y mostrar éxito
+    try {
+      window.open(whatsappURL, "_blank");
 
-    setFormData({
-      name: "",
-      number: "",
-      message: "",
-    });
+      Swal.fire({
+        title: "Gracias por tu mensaje!!",
+        text: "Tu mensaje ha sido enviado. Pronto nos pondremos en contacto con vos",
+        icon: "success",
+        confirmButtonColor: "#8b5e3c",
+        timer: 300000, // Se cierra sola tras 3 segundos
+        timerProgressBar: true,
+      });
+
+      // Limpiar formulario
+      setFormData({ name: "", number: "", message: "" });
+      setStatus("success");
+    } catch (error) {
+      Swal.fire({
+        title: "UPS",
+        text: "No pudimos abrir WhatsApp. Inténtalo de nuevo mas tarde.",
+        icon: "error",
+      });
+      setStatus("error");
+    }
   };
 
   return (
@@ -74,7 +85,6 @@ ${formData.message}
       )}
 
       <form onSubmit={handleSubmit} className={styles.form}>
-        {/* Input: Nombre */}
         <input
           type="text"
           name="name"
@@ -85,7 +95,6 @@ ${formData.message}
           className={styles.input}
         />
 
-        {/* Input: Teléfono */}
         <input
           type="number"
           name="number"
@@ -96,7 +105,6 @@ ${formData.message}
           className={styles.input}
         />
 
-        {/* Textarea: Mensaje */}
         <textarea
           name="message"
           placeholder="Tu mensaje..."
@@ -107,23 +115,11 @@ ${formData.message}
           className={styles.textarea}
         />
 
-        {/* Botón de Enviar */}
         <Button type="submit" disabled={status === "sending"}>
-          {status === "sending" ? "Enviando..." : "Enviar Mensaje"}
+          Enviar Mensaje
         </Button>
 
-        {/* Mensajes de Estado */}
-        {status === "success" && (
-          <p className={styles.successMessage}>
-            ¡Mensaje enviado con éxito! Gracias por contactarnos.
-          </p>
-        )}
-
-        {status === "error" && (
-          <p className={styles.errorMessage}>
-            Ocurrió un error. Inténtalo de nuevo más tarde.
-          </p>
-        )}
+        {/* Nota: Hemos quitado los <p> de estado porque ahora usamos SweetAlert */}
       </form>
     </div>
   );

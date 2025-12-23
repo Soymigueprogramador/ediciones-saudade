@@ -1,16 +1,52 @@
-# React + Vite
+# Ediciones Saudade
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada con **React** y **Vite**, orientada a la creación de un catálogo digital para *Ediciones Saudade*. El proyecto sirve como base para practicar desarrollo frontend moderno con componentes reutilizables y renderizado dinámico.
 
-Currently, two official plugins are available:
+## Tecnologías
+- React
+- Vite
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Node.js / npm
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instalación
+```bash
+git clone https://github.com/Soymigueprogramador/ediciones-saudade.git
+cd ediciones-saudade
+npm install
 
-## React Compiler
+Uso
+npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Estructura
+ediciones-saudade/
+├── public/assets/
+├── src/
+│   ├── components/
+│   ├── data/
+│   ├── App.jsx
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vite.config.js
 
-## Expanding the ESLint configuration
+Scripts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+npm run dev → servidor de desarrollo
+
+npm run build → build de producción
+
+npm run preview → vista previa del build
+
+Producción
+npm run build
+
+Licencia
+
+MIT
+
+Autor
+
+Miguel Salazar
+https://github.com/Soymigueprogramador 

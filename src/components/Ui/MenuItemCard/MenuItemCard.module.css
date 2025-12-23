@@ -33,7 +33,7 @@
 .imageContainer {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+
   overflow: hidden;
   margin-bottom: 1rem;
   border: 4px solid #f7f3ed;

@@ -56,3 +56,8 @@
   border-radius: 4px;
   text-align: center;
 }
+
+.swal2-popup {
+  font-family: 'Tu-Fuente-De-Saudade', serif !important;
+  border-radius: 15px;
+}
